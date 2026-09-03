@@ -13,6 +13,9 @@
 
 An architecture decision record (ADR) is a document that captures an important architecture decision made along with its context and consequences.
 
+> [!IMPORTANT]
+> Do your own due dilligence for these resources before using them in any critical systems.
+
 Contents:
 
 - [What is an architecture decision record?](#what-is-an-architecture-decision-record)
@@ -521,9 +524,11 @@ Tools:
 
 - [Mneme HQ - ADR enforcement for AI coding agents](https://github.com/TheoV823/mneme)
 
-- [Keep the Why - a repo-native agent skill that continuously captures, or retrospectively recovers, the reasoning behind a codebase](https://github.com/oliver-zehentleitner/keep-the-why)
+- [Keep the Why - a repo-native convention and agent skill that continuously captures, or retrospectively recovers, the reasoning behind a codebase](https://github.com/oliver-zehentleitner/keep-the-why)
 
 - [ADR Guard - GitHub Action that fails a pull request changing watched code without an architecture decision record](https://github.com/chohan-sarmad-ali/delivery-gates)
+
+- [kgai - append-only decision log for AI coding agents, a machine-readable companion to ADR files](https://github.com/kgaidev/kgai)
 
 Company-Specific Guidance:
 
