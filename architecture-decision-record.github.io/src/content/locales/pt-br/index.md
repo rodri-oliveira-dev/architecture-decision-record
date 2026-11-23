@@ -1,75 +1,75 @@
-# Registros de decisão de arquitetura (ADRs)
+# Registro de decisão de arquitetura (ADR)
 
-Um registro de decisão de arquitetura (ADR) documenta uma decisão arquitetural importante, incluindo seu contexto e suas consequências.
+Um registro de decisão de arquitetura (ADR) é um documento que registra uma decisão de arquitetura importante, junto com seu contexto e suas consequências.
 
 > [!IMPORTANT]
-> Avalie estas referências de forma independente antes de utilizá-las em sistemas críticos.
+> Faça sua própria diligência prévia sobre estes recursos antes de usá-los em quaisquer sistemas críticos.
 
 Conteúdo:
 
 - [O que é um registro de decisão de arquitetura?](#o-que-é-um-registro-de-decisão-de-arquitetura)
 - [Como começar a usar ADRs](#como-começar-a-usar-adrs)
 - [Como começar a usar ADRs com ferramentas](#como-começar-a-usar-adrs-com-ferramentas)
-- [Como começar a usar ADRs com Git](#como-começar-a-usar-adrs-com-git)
+- [Como começar a usar ADRs com git](#como-começar-a-usar-adrs-com-git)
 - [Skills do Claude Code para ADRs](#skills-do-claude-code-para-adrs)
-- [Convenções de nomes de arquivos para ADRs](#convenções-de-nomes-de-arquivos-para-adrs)
+- [Convenções de nomes de arquivo](#convenções-de-nomes-de-arquivo)
 - [Sugestões para escrever bons ADRs](#sugestões-para-escrever-bons-adrs)
-- [Exemplos de modelos de ADR](#exemplos-de-modelos-de-adr)
+- [Modelos de exemplo de ADR](#modelos-de-exemplo-de-adr)
 - [Conselhos de trabalho em equipe para ADRs](#conselhos-de-trabalho-em-equipe-para-adrs)
 - [Perguntas de trabalho em equipe para ADRs](#perguntas-de-trabalho-em-equipe-para-adrs)
-- [Próximos conceitos para explorar](#próximos-conceitos-para-explorar)
+- [Conceitos do próximo passo para ADRs](#conceitos-do-próximo-passo-para-adrs)
 - [Diagramas, visões e pontos de vista de arquitetura](#diagramas-visões-e-pontos-de-vista-de-arquitetura)
 - [Funções de aptidão para decisões como código](#funções-de-aptidão-para-decisões-como-código)
-- [Proteções de decisões em pull requests](#proteções-de-decisões-em-pull-requests)
-- [Para saber mais](#para-saber-mais)
+- [Proteções de decisão para pull requests](#proteções-de-decisão-para-pull-requests)
+- [Para mais informações](#para-mais-informações)
 
 Modelos:
 
-- [Modelo de registro de decisão por Jeff Tyree e Art Akerman](modelos/modelo-de-registro-de-decisao-por-jeff-tyree-e-art-akerman/)
-- [Modelo de registro de decisão por Michael Nygard](modelos/modelo-de-registro-de-decisao-por-michael-nygard/)
-- [Modelo de registro de decisão por EdgeX](modelos/modelo-de-registro-de-decisao-por-edgex/)
-- [Modelo de registro de decisão por arc42](modelos/modelo-de-registro-de-decisao-por-arc42/)
-- [Modelo de registro de decisão para padrão Alexandrino](modelos/modelo-de-registro-de-decisao-para-padrao-alexandrino/)
-- [Modelo de registro de decisão para caso de negócio](modelos/modelo-de-registro-de-decisao-para-caso-de-negocio/)
-- [Modelo de registro de decisão do Projeto MADR](modelos/modelo-de-registro-de-decisao-do-projeto-madr/)
-- [Modelo de registro de decisão usando Planguage](modelos/modelo-de-registro-de-decisao-usando-planguage/)
-- [Modelo de Paulo Merson](https://github.com/pmerson/ADR-template)
-- [Modelo Y-Statements de Olaf Zimmermann](https://medium.com/olzzio/y-statements-10eb07b5a177)
-- [Modelo de registro de decisão por Gareth Morgan](modelos/modelo-de-registro-de-decisao-por-gareth-morgan/)
-- [Modelo de registro de decisão por GIG Cymru NHS Wales](modelos/modelo-de-registro-de-decisao-por-gig-cymru-nhs-wales/)
-- [Modelo de registro de decisão para Decisões Técnicas Importantes (ITDs) por Ignacio Larrañaga](modelos/modelo-de-registro-de-decisao-para-decisoes-tecnicas-importantes/)
+- [Modelo de registro de decisão de Jeff Tyree e Art Akerman](modelos/modelo-de-registro-de-decisão-de-jeff-tyree-e-art-akerman/)
+- [Modelo de registro de decisão de Michael Nygard](modelos/modelo-de-registro-de-decisão-de-michael-nygard/)
+- [Modelo de registro de decisão do EdgeX](modelos/modelo-de-registro-de-decisão-do-edgex/)
+- [Modelo de registro de decisão do arc42](modelos/modelo-de-registro-de-decisão-do-arc42/)
+- [Modelo de registro de decisão para padrão alexandrino](modelos/modelo-de-registro-de-decisão-para-padrão-alexandrino/)
+- [Modelo de registro de decisão para caso de negócio](modelos/modelo-de-registro-de-decisão-para-caso-de-negócio/)
+- [Modelo de registro de decisão do projeto MADR](modelos/modelo-de-registro-de-decisão-do-projeto-madr/)
+- [Modelo de registro de decisão usando Planguage](modelos/modelo-de-registro-de-decisão-usando-planguage/)
+- [Modelo de registro de decisão de Paulo Merson](https://github.com/pmerson/ADR-template)
+- [Modelo de registro de decisão de Olaf Zimmermann](https://medium.com/olzzio/y-statements-10eb07b5a177)
+- [Modelo de registro de decisão de Gareth Morgan](modelos/modelo-de-registro-de-decisão-de-gareth-morgan/)
+- [Modelo de registro de decisão do GIG Cymru NHS Wales](modelos/modelo-de-registro-de-decisão-do-gig-cymru-nhs-wales/)
+- [Modelo de registro de decisão para decisões técnicas importantes (ITDs), de Ignacio Larrañaga](modelos/modelo-de-registro-de-decisão-para-decisões-técnicas-importantes/)
 
 Exemplos:
 
-- [Semana de trabalho de 4 dias](exemplos/semana-de-trabalho-de-4-dias/)
-- [Desenvolvimento ágil de software](exemplos/desenvolvimento-agil-de-software/)
-- [Amazon Web Services](exemplos/amazon-web-services/)
-- [API usando JSON vs. gRPC](exemplos/api-usando-json-vs-grpc/)
-- [Opções de autenticação e autorização](exemplos/opcoes-de-autenticacao-e-autorizacao/)
-- [Framework de automação de navegador para testes E2E: Playwright vs Selenium](exemplos/framework-de-automacao-de-navegador-para-testes-e2e-playwright-vs-selenium/)
-- [Biblioteca de gráficos para visualização de dados usando TypeScript e JSON](exemplos/biblioteca-de-graficos-para-visualizacao-de-dados-usando-typescript-e-json/)
-- [Escolha de uma tecnologia de banco de dados](exemplos/escolha-de-tecnologia-de-banco-de-dados/)
-- [Veja mais exemplos](exemplos/)
+- [Framework CSS](exemplos/framework-css/)
+- [Configuração por variáveis de ambiente](exemplos/configuração-por-variáveis-de-ambiente/)
+- [Métricas, monitores, alertas](exemplos/métricas-monitores-alertas/)
+- [Microsoft Azure DevOps](exemplos/microsoft-azure-devops/)
+- [Monorepo ou multirepo](exemplos/monorepo-ou-multirepo/)
+- [Linguagens de programação](exemplos/linguagens-de-programação/)
+- [Armazenamento de segredos](exemplos/armazenamento-de-segredos/)
+- [Formato de carimbo de data e hora](exemplos/formato-de-carimbo-de-data-e-hora/)
+- [Muitos mais...](exemplos/)
 
 ## O que é um registro de decisão de arquitetura?
 
-Um **registro de decisão de arquitetura** (ADR) é um documento que captura uma decisão de arquitetura importante tomada junto com seu contexto e suas consequências.
+Um **registro de decisão de arquitetura** (ADR) é um documento que captura uma decisão arquitetural importante tomada, juntamente com seu contexto e suas consequências.
 
-Uma **decisão de arquitetura** (AD) é uma escolha de design de software que trata de um requisito significativo.
+Uma **decisão de arquitetura** (AD) é uma escolha de design de software que atende a um requisito significativo.
 
-Um **log de decisões de arquitetura** (ADL) é a coleção de todas as ADRs criadas e mantidas para um projeto (ou organização) específico.
+Um **registro de decisões de arquitetura** (ADL) é a coleção de todos os ADRs criados e mantidos para um projeto (ou organização) específico.
 
-Um **requisito arquiteturalmente significativo** (ASR) é um requisito que tem efeito mensurável na arquitetura de um sistema de software.
+Um **requisito arquiteturalmente significativo** (ASR) é um requisito que tem um efeito mensurável na arquitetura de um sistema de software.
 
-Todos esses conceitos estão dentro do tema de **gestão do conhecimento de arquitetura** (AKM).
+Tudo isso está dentro do tópico da **gestão do conhecimento de arquitetura** (AKM).
 
-O objetivo deste documento é fornecer uma visão geral rápida de ADRs, como criá-los e onde procurar mais informações.
+O objetivo deste documento é fornecer uma visão geral rápida dos ADRs, de como criá-los e de onde procurar mais informações.
 
 Abreviações:
 
   * **AD**: decisão de arquitetura
 
-  * **ADL**: log de decisões de arquitetura
+  * **ADL**: registro de decisões de arquitetura
 
   * **ADR**: registro de decisão de arquitetura
 
@@ -83,65 +83,67 @@ Para começar a usar ADRs, converse com seus colegas de equipe sobre estas área
 
 Identificação da decisão:
 
-  * Quão urgente e importante é a AD?
+  * Quão urgente e quão importante é o AD?
 
-  * Ela precisa ser tomada agora ou pode esperar até que se saiba mais?
+  * Ele precisa ser tomado agora ou pode esperar até que se saiba mais?
 
-  * Tanto a experiência pessoal quanto a coletiva, bem como métodos e práticas de design reconhecidos, podem ajudar na identificação da decisão.
+  * Tanto a experiência pessoal e coletiva quanto métodos e práticas de design reconhecidos podem ajudar na identificação de decisões.
 
-  * Idealmente, mantenha uma lista de tarefas de decisões que complemente a lista de tarefas do produto.
+  * Idealmente, mantenha uma lista de decisões a tomar que complemente a lista de tarefas do produto.
 
 Tomada de decisão:
 
-  * Existem várias técnicas de tomada de decisão, tanto gerais quanto específicas de arquitetura de software, por exemplo, dialogue mapping.
+  * Existem várias técnicas de tomada de decisão, tanto gerais quanto específicas de arquitetura de software, por exemplo, o mapeamento de diálogo.
 
-  * A tomada de decisão em grupo é um tema ativo de pesquisa.
+  * A tomada de decisão em grupo é um tópico de pesquisa ativo.
 
-Implementação e aplicação da decisão:
+Promulgação e aplicação da decisão:
 
-  * ADs são usadas em design de software; portanto, precisam ser comunicadas e aceitas pelas partes interessadas do sistema que o financiam, desenvolvem e operam.
+  * Os ADs são usados no design de software; portanto, precisam ser comunicados e aceitos pelas partes interessadas do sistema que o financiam, desenvolvem e operam.
 
-  * Estilos de codificação arquiteturalmente evidentes e revisões de código focadas em preocupações e decisões de arquitetura são duas práticas relacionadas.
+  * Estilos de codificação arquiteturalmente evidentes e revisões de código que se concentram em preocupações e decisões arquiteturais são duas práticas relacionadas.
 
-  * ADs também precisam ser (re)consideradas ao modernizar um sistema de software no contexto da evolução de software.
+  * Os ADs também precisam ser (re)considerados ao modernizar um sistema de software na evolução do software.
 
-Compartilhamento de decisões (opcional):
+Compartilhamento da decisão (opcional):
 
-  * Muitas ADs se repetem entre projetos.
+  * Muitos ADs se repetem entre projetos.
 
-  * Portanto, experiências com decisões passadas, tanto boas quanto ruins, podem ser ativos reutilizáveis valiosos ao empregar uma estratégia explícita de gestão do conhecimento.
+  * Portanto, as experiências com decisões passadas, boas e ruins, podem ser ativos reutilizáveis valiosos ao empregar uma estratégia explícita de gestão do conhecimento.
 
 Documentação da decisão:
 
   * Existem muitos modelos e ferramentas para captura de decisões.
 
-  * Consulte comunidades ágeis, por exemplo, ADRs de M. Nygard.
+  * Veja as comunidades ágeis, por exemplo, os ADRs de M. Nygard.
 
-  * Consulte processos tradicionais de engenharia de software e design de arquitetura, por exemplo, layouts de tabela sugeridos pela IBM UMF e por Tyree e Akerman da CapitalOne.
+  * Veja os processos tradicionais de engenharia de software e design de arquitetura, por exemplo, os layouts de tabela sugeridos pela IBM UMF e por Tyree e Akerman, da CapitalOne.
 
 Para saber mais:
 
-  * As etapas acima são adotadas da entrada da Wikipedia sobre [decisão de arquitetura](https://en.wikipedia.org/wiki/Architectural_decision)
+  * Os passos acima foram adotados do verbete da Wikipédia [Architectural Decision](https://en.wikipedia.org/wiki/Architectural_decision)
 
 ## Como começar a usar ADRs com ferramentas
+
+- [MySpec](https://myspec.dev) — Plataforma automatizada de especificação e decisão de arquitetura que estrutura a constituição do projeto, a arquitetura técnica e os ADRs em Markdown limpo servido via MCP.
 
 Você pode começar a usar ADRs com ferramentas da maneira que quiser.
 
 Por exemplo:
 
-  * Se você gosta de usar Google Drive e edição online, então pode criar um Google Doc ou uma Google Sheet.
+  * Se você gosta de usar o Google Drive e a edição online, pode criar um Google Doc ou uma Google Sheet.
 
-  * Se você gosta de usar controle de versão de código-fonte, como git, então pode criar um arquivo para cada ADR.
+  * Se você gosta de usar controle de versão de código-fonte, como o git, pode criar um arquivo para cada ADR.
 
-  * Se você gosta de usar ferramentas de planejamento de projetos, como Atlassian Jira, então pode usar o rastreador de planejamento da ferramenta.
+  * Se você gosta de usar ferramentas de planejamento de projetos, como o Atlassian Jira, pode usar o rastreador de planejamento da ferramenta.
 
-  * Se você gosta de usar wikis, como MediaWiki, então pode criar uma wiki de ADRs.
+  * Se você gosta de usar wikis, como o MediaWiki, pode criar uma wiki de ADRs.
 
-## Como começar a usar ADRs com Git
+## Como começar a usar ADRs com git
 
-Se você gosta de usar controle de versão com git, então veja como gostamos de começar a usar ADRs com git em um projeto de software típico com código-fonte.
+Se você gosta de usar o controle de versão git, veja como gostamos de começar a usar ADRs com git em um projeto de software típico com código-fonte.
 
-Crie um diretório para arquivos de ADR:
+Crie um diretório para os arquivos de ADR:
 
 ```sh
 $ mkdir adr
@@ -153,24 +155,25 @@ Para cada ADR, crie um arquivo de texto, como `database.txt`:
 $ vi database.txt
 ```
 
-Escreva o que quiser na ADR. Veja os modelos neste repositório para ter ideias.
+Escreva o que quiser no ADR. Veja os modelos neste repositório para ter ideias.
 
-Faça commit da ADR no seu repositório git.
+Faça commit do ADR no seu repositório git.
 
 ## Skills do Claude Code para ADRs
 
-Este repositório oferece duas [skills do Claude Code](https://github.com/architecture-decision-record/architecture-decision-record/tree/main/skills/) para apoiar a criação e a manutenção de ADRs:
+Este repositório inclui duas skills do [Claude Code](https://claude.com/claude-code) em [`skills/`](https://github.com/architecture-decision-record/architecture-decision-record/tree/main/skills/), para que um agente de programação com IA possa escrever e manter ADRs do jeito que este projeto recomenda:
 
-- [architecture-decision-record-skill](https://github.com/architecture-decision-record/architecture-decision-record/tree/main/skills/architecture-decision-record-skill/) — ajuda a decidir quando registrar uma decisão, escolher modelos e documentar contexto, decisão e consequências.
-- [architecture-decision-record-maintainer-skill](https://github.com/architecture-decision-record/architecture-decision-record/tree/main/skills/architecture-decision-record-maintainer-skill/) — orienta os mantenedores sobre como adicionar modelos, exemplos e conteúdo traduzido.
+- [`architecture-decision-record-skill`](https://github.com/architecture-decision-record/architecture-decision-record/tree/main/skills/architecture-decision-record-skill/) — de uso geral, para qualquer pessoa que escreva um ADR em qualquer projeto. Ajuda a decidir se uma decisão precisa de um ADR, cria um diretório `adr/` ou `decisions/`, nomeia o arquivo, escolhe um modelo entre os onze esqueletos incluídos e escreve seções sólidas de contexto, decisão e consequências.
 
-Para utilizar uma skill, copie sua pasta para `.claude/skills/` no repositório de trabalho, ou para `~/.claude/skills/` para disponibilizá-la globalmente. Em seguida, peça ao Claude Code para escrever ou revisar uma ADR.
+- [`architecture-decision-record-maintainer-skill`](https://github.com/architecture-decision-record/architecture-decision-record/tree/main/skills/architecture-decision-record-maintainer-skill/) — específica para quem mantém este repositório. Documenta a estrutura do repositório, a convenção de espelhar README e locales e os passos exatos para adicionar um novo modelo, exemplo ou link de ferramenta.
 
-## Convenções de nomes de arquivos para ADRs
+Para usar uma skill, copie a pasta dela para `.claude/skills/` na raiz do repositório em que você está trabalhando (ou para `~/.claude/skills/` para deixá-la disponível em todos os projetos) e peça ao Claude Code que escreva ou revise um ADR.
 
-Se você optar por criar seus ADRs usando arquivos de texto típicos, talvez queira definir sua própria convenção de nomes de arquivos de ADR.
+## Convenções de nomes de arquivo
 
-Preferimos usar uma convenção de nomes de arquivos que tenha um formato específico.
+Se você optar por criar seus ADRs usando arquivos de texto comuns, talvez queira definir sua própria convenção de nomes de arquivo de ADR.
+
+Preferimos usar uma convenção de nomes de arquivo que tenha um formato específico.
 
 Exemplos:
 
@@ -182,172 +185,209 @@ Exemplos:
 
   * handle-exceptions.md
 
-Nossa convenção de nomes de arquivos:
+Nossa convenção de nomes de arquivo:
 
-  * O nome tem uma frase verbal imperativa no presente. Isso ajuda na legibilidade e corresponde ao nosso formato de mensagem de commit.
+  * O nome tem uma locução verbal no imperativo do presente. Isso ajuda a legibilidade e combina com o formato das nossas mensagens de commit.
 
-  * O nome usa letras minúsculas e hífens (igual a este repositório). Esse é um equilíbrio entre legibilidade e usabilidade do sistema.
+  * O nome usa letras minúsculas e hifens (igual a este repositório). É um equilíbrio entre legibilidade e usabilidade do sistema.
 
-  * A extensão é markdown. Isso pode ser útil para facilitar a formatação.
+  * A extensão é markdown. Isso pode ser útil para formatar facilmente.
 
 ## Sugestões para escrever bons ADRs
 
-Características de uma boa ADR:
+Características de um bom ADR:
 
-* Justificativa: explique os motivos para tomar uma AD específica. Isso pode incluir o contexto (veja abaixo), prós e contras de várias escolhas potenciais, comparações de funcionalidades, discussões de custo/benefício e mais.
+* Justificativa: explique os motivos para tomar o AD em questão. Isso pode incluir o contexto (veja abaixo), prós e contras de várias escolhas potenciais, comparações de recursos, discussões de custo/benefício e mais.
 
-* Específica: cada ADR deve tratar de uma AD, não de várias ADs.
+* Específico: cada ADR deve tratar de um AD, não de vários ADs.
 
-* Timestamps: identifique quando cada item na ADR foi escrito. Isso é especialmente importante para aspectos que podem mudar ao longo do tempo, como custos, cronogramas, escalabilidade e afins.
+* Carimbos de data e hora: identifique quando cada item do ADR foi escrito. Isso é especialmente importante para aspectos que podem mudar com o tempo, como custos, cronogramas, escalabilidade e similares.
 
-* Imutável: não altere informações existentes em uma ADR. Em vez disso, complemente a ADR adicionando novas informações ou substitua a ADR criando uma nova ADR.
+* Imutável: não altere informações existentes em um ADR. Em vez disso, emende o ADR adicionando novas informações ou substitua o ADR criando um novo ADR.
 
-Características de uma boa seção "Contexto" em uma ADR:
+Características de uma boa seção “Contexto” em um ADR:
 
-* Explique a situação e as prioridades de negócio da sua organização.
+* Explique a situação da sua organização e as prioridades de negócio.
 
-* Inclua justificativa e considerações baseadas na composição social e de habilidades das suas equipes.
+* Inclua justificativas e considerações baseadas na composição social e de habilidades das suas equipes.
 
-* Inclua prós e contras relevantes e descreva-os em termos alinhados às suas necessidades e metas.
+* Inclua prós e contras relevantes e descreva-os em termos alinhados às suas necessidades e objetivos.
 
-Características de uma boa seção "Consequências" em uma ADR:
+Características de uma boa seção “Consequências” em um ADR:
 
-* Explique o que decorre da tomada da decisão. Isso pode incluir efeitos, resultados, entregas, ações de acompanhamento e mais.
+* Explique o que decorre de tomar a decisão. Isso pode incluir efeitos, resultados, saídas, desdobramentos e mais.
 
-* Inclua informações sobre quaisquer ADRs subsequentes. É relativamente comum que uma ADR acione a necessidade de mais ADRs, como quando uma ADR faz uma grande escolha abrangente, que por sua vez cria necessidades de decisões menores.
+* Inclua informações sobre quaisquer ADRs subsequentes. É relativamente comum um ADR desencadear a necessidade de mais ADRs, como quando um ADR faz uma grande escolha abrangente, o que por sua vez cria necessidade de mais decisões menores.
 
-* Inclua quaisquer processos de revisão pós-ação. É típico que as equipes revisem cada ADR um mês depois, para comparar as informações da ADR com o que aconteceu na prática real, a fim de aprender e evoluir.
+* Inclua quaisquer processos de revisão pós-ação. É típico as equipes revisarem cada ADR um mês depois, para comparar as informações do ADR com o que aconteceu na prática, a fim de aprender e crescer.
 
-Uma nova ADR pode tomar o lugar de uma ADR anterior:
+Um novo ADR pode tomar o lugar de um ADR anterior:
 
-* Quando uma AD é tomada e substitui ou invalida uma ADR anterior, então uma nova ADR deve ser criada
+* Quando um AD é tomado e substitui ou invalida um ADR anterior, deve-se criar um novo ADR
 
-## Exemplos de modelos de ADR
+## Modelos de exemplo de ADR
 
-Os modelos de ADR atendem a diferentes necessidades e níveis de detalhamento:
+Modelos de exemplo de ADR que coletamos na rede:
 
-- [Michael Nygard](modelos/modelo-de-registro-de-decisao-por-michael-nygard/) — simples e bastante utilizado.
-- [Jeff Tyree e Art Akerman](modelos/modelo-de-registro-de-decisao-por-jeff-tyree-e-art-akerman/) — mais abrangente.
-- [Padrão Alexandrino](modelos/modelo-de-registro-de-decisao-para-padrao-alexandrino/) — valoriza o contexto.
-- [Caso de negócio](modelos/modelo-de-registro-de-decisao-para-caso-de-negocio/) — considera custos e alternativas.
-- [MADR](modelos/modelo-de-registro-de-decisao-do-projeto-madr/) — evidencia opções e consequências.
-- [Planguage](modelos/modelo-de-registro-de-decisao-usando-planguage/) — orientado a qualidade.
-- [Decisões Técnicas Importantes](modelos/modelo-de-registro-de-decisao-para-decisoes-tecnicas-importantes/) — documentação concisa para revisão técnica.
+- [Modelo de ADR de Michael Nygard](modelos/modelo-de-registro-de-decisão-de-michael-nygard/) (simples e popular)
+
+- [Modelo de ADR de Jeff Tyree e Art Akerman](modelos/modelo-de-registro-de-decisão-de-jeff-tyree-e-art-akerman/) (mais sofisticado)
+
+- [Modelo de ADR para o padrão Alexandrian](modelos/modelo-de-registro-de-decisão-para-padrão-alexandrino/) (simples, com detalhes de contexto)
+
+- [Modelo de ADR para estudo de viabilidade](modelos/modelo-de-registro-de-decisão-para-caso-de-negócio/) (mais voltado a MBA, com custos, SWOT e mais opiniões)
+
+- [Modelo de ADR do projeto Markdown Any Decision Records (MADR)](modelos/modelo-de-registro-de-decisão-do-projeto-madr/) (versão simples e versão elaborada; esta última enfatiza as opções e seus prós e contras)
+
+- [Modelo de ADR usando Planguage](modelos/modelo-de-registro-de-decisão-usando-planguage/) (mais voltado à garantia de qualidade)
+
+- [Modelo para Decisões Técnicas Importantes (ITDs) de Ignacio Larrañaga](modelos/modelo-de-registro-de-decisão-para-decisões-técnicas-importantes/) (enxuto e com a decisão em primeiro lugar, otimizado para revisão executiva rápida)
 
 ## Conselhos de trabalho em equipe para ADRs
 
-Se você está considerando usar registros de decisão com sua equipe, então aqui estão alguns conselhos que aprendemos trabalhando com muitas equipes.
+Se você está pensando em usar registros de decisão com sua equipe, aqui estão alguns conselhos que aprendemos trabalhando com muitas equipes.
 
-Você tem uma oportunidade de liderar seus colegas de equipe conversando juntos sobre o "porquê", em vez de impor o "o quê". Por exemplo, registros de decisão são uma forma de as equipes pensarem melhor e se comunicarem melhor; registros de decisão não têm valor se forem apenas uma exigência forçada de documentação após o fato.
+Você tem a oportunidade de liderar seus colegas conversando juntos sobre o “porquê”, em vez de impor o “quê”. Por exemplo, registros de decisão são uma forma de as equipes pensarem de modo mais inteligente e se comunicarem melhor; registros de decisão não têm valor se forem apenas uma exigência burocrática imposta após o fato.
 
-Algumas equipes preferem muito mais o nome "decisões" à abreviação "ADRs". Quando algumas equipes usam o nome de diretório "decisions", é como se uma lâmpada se acendesse, e a equipe começasse a colocar mais informações no diretório, como decisões sobre fornecedores, decisões de planejamento, decisões de cronograma etc. Todos esses tipos de informação podem usar o mesmo modelo. Nossa hipótese é que as pessoas aprendem mais rápido com palavras ("decisões") do que com abreviações ("ADRs"), e que as pessoas ficam mais motivadas a escrever documentos em andamento quando a palavra "registro" é removida, e também que alguns desenvolvedores e alguns gerentes não gostam da palavra "arquitetura".
+Algumas equipes preferem muito mais o nome “decisões” (decisions) à abreviação “ADRs”. Quando algumas equipes usam o nome de diretório “decisions”, é como se uma lâmpada se acendesse, e a equipe começa a colocar mais informações no diretório, como decisões de fornecedores, decisões de planejamento, decisões de cronograma etc. Todos esses tipos de informação podem usar o mesmo modelo. Nossa hipótese é que as pessoas aprendem mais rápido com palavras (“decisões”) do que com abreviações (“ADRs”), que as pessoas ficam mais motivadas a escrever documentos em andamento quando a palavra “registro” é removida e que alguns desenvolvedores e alguns gerentes não gostam da palavra “arquitetura”.
 
-Em teoria, a imutabilidade é ideal. Na prática, a mutabilidade funcionou melhor para nossas equipes. Inserimos as novas informações na ADR existente, com um carimbo de data, e uma observação de que as informações chegaram depois da decisão. Esse tipo de abordagem leva a um "documento vivo" que todos nós podemos atualizar. Atualizações típicas acontecem quando obtemos informações graças a novos colegas de equipe, novas ofertas, resultados reais de nossos usos, ou mudanças de terceiros após o fato, como capacidades de fornecedores, planos de preços, contratos de licença etc.
+Em teoria, a imutabilidade é ideal. Na prática, a mutabilidade funcionou melhor para as nossas equipes. Inserimos a nova informação no ADR existente, com um carimbo de data e uma nota de que a informação chegou depois da decisão. Esse tipo de abordagem leva a um “documento vivo” que todos nós podemos atualizar. Atualizações típicas ocorrem quando recebemos informações graças a novos colegas, novas ofertas, resultados reais dos nossos usos ou mudanças de terceiros posteriores à decisão, como capacidades de fornecedores, planos de preços, contratos de licença etc.
 
 ## Perguntas de trabalho em equipe para ADRs
 
-### Quem pode criar uma ADR?
+### Quem pode criar um ADR?
 
-Considere áreas como pessoas específicas, papéis específicos, equipes específicas ou departamentos específicos; considere também se há pessoas, papéis, equipes ou departamentos que podem encomendar uma ADR, ou seja, solicitar uma que outra pessoa irá redigir.
+Considere áreas como pessoas específicas, papéis específicos, equipes específicas ou departamentos específicos; considere também se há pessoas, papéis, equipes ou departamentos que podem encomendar um ADR, ou seja, solicitar um que outra pessoa irá redigir. 
 
-Exemplo de resposta: qualquer pessoa em nossa organização que tenha lido a página README sobre registros de decisão de arquitetura pode propor uma ADR, ou seja, a pessoa pode começar a escrevê-la e compartilhá-la com a equipe.
+Exemplo de resposta: qualquer pessoa da nossa organização que tenha lido a página README sobre registros de decisão de arquitetura pode propor um ADR, ou seja, pode começar a escrevê-lo e compartilhá-lo com a equipe.
 
-### O que justifica abrir uma ADR?
+### O que justifica abrir um ADR?
 
-Considere áreas como as formas de trabalho em equipe da sua organização, a estrutura do seu sistema de software, coordenação entre equipes, manutenibilidade de longo prazo, interfaces externas, quem você quer beneficiar e afins.
+Considere áreas como as formas de trabalho das equipes da sua organização, a estrutura do seu sistema de software, a coordenação entre equipes, a manutenibilidade de longo prazo, as interfaces externas, quem você quer beneficiar e similares. 
 
-Exemplo de resposta: queremos criar uma ADR quando queremos que desenvolvedores futuros entendam o "porquê" do que estamos fazendo.
+Exemplo de resposta: queremos criar um ADR quando queremos que desenvolvedores futuros entendam o “porquê” do que estamos fazendo.
 
-### O que justifica não abrir uma ADR?
+### O que justifica não abrir um ADR?
 
-Considere áreas como decisões que não são sobre arquitetura, ou são pequenas, como de risco mínimo, autocontidas ou de um único desenvolvedor, ou já estão totalmente cobertas em outro lugar, como por padrões, políticas ou documentação, ou são temporárias, como soluções de contorno, provas de conceito ou experimentos.
+Considere áreas como decisões que não são sobre arquitetura, ou são minúsculas, por exemplo de risco mínimo, autocontidas ou de um único desenvolvedor, ou já estão totalmente cobertas em outro lugar, como em padrões, políticas ou documentação, ou são temporárias, como soluções paliativas, provas de conceito ou experimentos. 
 
-Exemplo de resposta: queremos dispensar uma ADR quando uma decisão é limitada em escopo, tempo, risco e custo, ou já está coberta em outro lugar.
+Exemplo de resposta: queremos dispensar um ADR quando uma decisão é limitada em escopo, tempo, risco e custo, ou já está coberta em outro lugar.
 
-### Qual é o ciclo de vida de uma ADR?
+### Qual é o ciclo de vida de um ADR?
 
-Considere áreas como o processo de criação, o processo de pesquisa, o processo de decisão, o processo de implementação e o processo de encerramento. Considere como acompanhar o ciclo de vida da ADR ao longo do tempo, como mover a ADR de um status para o próximo, e também como comunicar isso às partes interessadas.
+Considere áreas como o processo de criação, o processo de pesquisa, o processo de decisão, o processo de implementação e o processo de desativação. Considere como acompanhar o ciclo de vida do ADR ao longo do tempo, como mover o ADR de um estado para o próximo e também como comunicar isso às partes interessadas. 
 
-Exemplo de resposta: queremos que uma ADR tenha seis estágios de ciclo de vida: Iniciando -> Pesquisando -> Avaliando -> Implementando -> Mantendo -> Encerrando.
+Exemplo de resposta: queremos que um ADR tenha cinco estágios de ciclo de vida: Iniciando → Pesquisando → Avaliando → Implementando → Mantendo → Desativando.
 
-### Quais são os critérios para as etapas do ciclo de vida de uma ADR?
+### Quais são os critérios para as etapas do ciclo de vida de um ADR?
 
-Considere áreas como critérios de aceitação para uma ADR, ou seja, como você sabe que ela é boa o suficiente para avançar de uma etapa do ciclo de vida para a próxima? O problema está claramente articulado? As alternativas foram consideradas? Os trade-offs estão suficientemente bem compreendidos e documentados?
-Todo o contexto relevante está disponível? Todas as partes interessadas relevantes estão envolvidas? Todo o feedback foi incorporado?
+Considere áreas como os critérios de aceitação de um ADR, ou seja, como você sabe que ele está bom o suficiente para avançar de uma etapa do ciclo de vida para a seguinte? O problema está claramente articulado? As alternativas foram consideradas? Os trade-offs estão bem compreendidos e documentados?
+Todo o contexto relevante está presente? Todas as partes interessadas relevantes estão envolvidas? Todo o feedback foi incorporado? 
 
-Exemplo de resposta: queremos que uma ADR seja votada pelas partes interessadas quando a equipe ativa tiver 1) concluído sua pesquisa, 2) concluído sua avaliação, 3) publicado a proposta de ADR para as partes interessadas com uma solicitação de comentários e um timebox de uma semana, 4) todos os comentários das partes interessadas tiverem sido incorporados e tratados.
+Exemplo de resposta: queremos que um ADR seja votado pelas partes interessadas quando a equipe ativa tiver 1) concluído sua pesquisa, 2) concluído sua avaliação, 3) publicado a proposta de ADR para as partes interessadas com um pedido de comentários e um prazo de uma semana, 4) incorporado e tratado todos os comentários das partes interessadas.
 
-### Quais papéis e responsabilidades interagem com uma ADR?
+### Quais papéis e responsabilidades interagem com um ADR?
 
-Considere papéis como proponente, pesquisador, avaliador, revisor, aprovador, mantenedor e afins. Considere responsabilidades como comunicação com partes interessadas, garantia de que expectativas sejam atendidas, compartilhamento no site ou na intranet, e revisão periódica do trabalho, especialmente quando mudanças relevantes acontecerem.
+Considere papéis como proponente, pesquisador, avaliador, revisor, aprovador, mantenedor e similares. Considere responsabilidades como comunicação com as partes interessadas, garantia de que as expectativas sejam atendidas, compartilhamento no site ou na intranet e revisão periódica do trabalho, especialmente quando ocorrerem mudanças relevantes.
 
-Exemplo de resposta: queremos que cada ADR sempre tenha uma pessoa de contato principal, uma pessoa de contato secundária e uma equipe responsável; elas são responsáveis por comunicações, publicações, manutenção, revisão periódica pelo menos uma vez por ano, e eventual encerramento conforme necessário.
+Exemplo de resposta: queremos que cada ADR sempre tenha uma pessoa de contato principal, uma pessoa de contato secundária e uma equipe responsável; elas são responsáveis por comunicações, publicações, manutenção, revisão periódica pelo menos uma vez por ano e eventual desativação, conforme necessário.
 
-### Como a governança interage com uma ADR?
+### Como a governança interage com um ADR?
 
-Considere áreas como as formas de trabalho da sua organização, quaisquer necessidades especiais de conformidade, como aspectos legais ou de recursos humanos, e como você quer lidar com consenso versus conflito versus escalonamento. Há áreas, pessoas ou equipes que podem ter mais influência que outras em relação a uma ADR, como poder aprová-la, votar nela ou vetá-la?
+Considere áreas como as formas de trabalho da sua organização, quaisquer necessidades especiais de conformidade, por exemplo em aspectos jurídicos ou de recursos humanos, e como você quer lidar com consenso versus conflito versus escalonamento. Existem áreas, pessoas ou equipes que podem ter mais influência que outras sobre um ADR, como poder aprová-lo, votar nele ou vetá-lo?
 
-Exemplo de resposta: a governança de uma ADR está nesta ordem de prioridade: o CEO, o CTO, o CLO, a equipe que implementa uma ADR, os especialistas da equipe que têm mais conhecimento sobre a decisão de arquitetura. Ninguém mais tem governança, a menos que isso esteja descrito na ADR.
+Exemplo de resposta: a governança de um ADR obedece a esta ordem de prioridade: o CEO, o CTO, o CLO, a equipe que implementa um ADR, os especialistas da equipe mais conhecedores do ADD. Ninguém mais tem governança, a menos que descrito no ADR. 
 
-### Quais princípios interagem com uma ADR?
+### Quais princípios interagem com um ADR?
 
-Considere áreas como as formas de trabalho da sua organização que incluem mover-se rapidamente versus mover-se lentamente, consenso de decisão versus conflito de decisão, preferências de risco versus preferências de segurança, discussão pública versus discussão privada e afins.
+Considere áreas como as formas de trabalho da sua organização, que incluem agir rápido versus agir devagar, consenso de decisão versus conflito de decisão, preferências de risco versus preferências de segurança, discussão pública versus discussão privada e similares.
 
-Exemplo de resposta: usamos os princípios de liderança de viés para ação, discordar e se comprometer, estimativas de 70% são boas o suficiente para decisões facilmente reversíveis e facilmente isoláveis, e formas de trabalho públicas, com exceção de informações confidenciais conforme descrito no acordo de confidencialidade da nossa organização.
+Exemplo de resposta: usamos os princípios de liderança de viés para a ação, discordar e comprometer-se, estimativas de 70% são boas o suficiente para decisões facilmente reversíveis e facilmente isoláveis, e formas de trabalho públicas, com exceção de informações confidenciais conforme descrito no acordo de confidencialidade da nossa organização.
 
-## Próximos conceitos para explorar
+## Conceitos do próximo passo para ADRs
 
-O [arc42](https://arc42.org/) oferece orientação para documentar objetivos, restrições, contexto, qualidade, riscos e decisões arquiteturais.
+O [Arc42](https://arc42.org/) responde a duas perguntas de forma pragmática e pode ser adaptado às suas necessidades. O que você deve documentar/comunicar sobre a sua arquitetura? Como deve documentar/comunicar? O Arc42 inclui registros de decisão de arquitetura e orientações sobre metas, restrições, contextos, qualidade, riscos e mais.
 
-O [modelo C4](https://c4model.com/) apresenta diagramas hierárquicos de contexto, contêineres, componentes e código, além de diagramas dinâmicos e de implantação. Ambas as abordagens complementam a documentação de ADRs.
+[O modelo C4](https://c4model.com/) é uma abordagem fácil de aprender e amigável para desenvolvedores de diagramar a arquitetura de software. O C4 é um conjunto de diagramas hierárquicos de contexto, contêineres, componentes e código, além de diagramas de apoio para panorama de sistemas, dinâmica e implantação.
 
 ## Diagramas, visões e pontos de vista de arquitetura
 
-Um **diagrama de arquitetura** é uma representação de uma visão arquitetural. A **visão** corresponde a um ponto de vista, definido de acordo com o público-alvo e suas preocupações.
+Um diagrama de arquitetura é chamado de "visão de arquitetura".
 
-Exemplos de diagramas e visões:
+Uma "visão de arquitetura" é uma instância de um "ponto de vista de arquitetura".
 
-- Capacidades de negócio e processos de alto nível.
-- [Fluxos de valor](https://en.wikipedia.org/wiki/Value_stream).
-- Funcionalidades associadas aos componentes da aplicação.
-- [Modelo C4](https://en.wikipedia.org/wiki/C4_model): contexto e contêineres (AS-IS e TO-BE).
-- [Diagramas de entidade-relacionamento](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model) para entidades e dados.
-- [Diagramas de sequência](https://en.wikipedia.org/wiki/Sequence_diagram) para fluxos e integrações.
-- [BPMN](https://en.wikipedia.org/wiki/Business_Process_Model_and_Notation) para processos de negócio.
-- Diagramas de identidade, autorização, segurança, infraestrutura e implantação.
+Um "ponto de vista de arquitetura" considera um público específico com preocupações específicas.
 
-Selecione o ponto de vista que melhor explica a decisão às partes interessadas.
+Exemplos de pontos de vista, visões e diagramas de arquitetura:
+
+- Capacidades de negócio
+
+- Processos de negócio de alto nível
+
+- [Fluxos de valor](https://en.wikipedia.org/wiki/Value_stream)
+
+- Funções de software mapeadas para componentes de aplicação
+
+- [C4 Model](https://en.wikipedia.org/wiki/C4_model) Diagrama de contexto (TO-BE / AS-IS)
+
+- [C4 Model](https://en.wikipedia.org/wiki/C4_model) Diagrama de contêineres (TO-BE / AS-IS)
+
+- [Diagrama entidade-relacionamento](https://en.wikipedia.org/w/index.php?title=Entity_relationship_diagram) (ERD) para mapear entidades de dados para componentes de aplicação
+
+- [Diagramas de sequência](https://en.wikipedia.org/wiki/Sequence_diagram) para descrever fluxos funcionais dentro dos sistemas e nas integrações
+
+- [Business Process Model and Notation](https://en.wikipedia.org/wiki/Business_Process_Model_and_Notation) (BPMN) diagramas para descrever fluxos de dados entre componentes de aplicação
+
+- [Business Process Model and Notation](https://en.wikipedia.org/wiki/Business_Process_Model_and_Notation) (BPMN) diagramas para descrever processos de negócio / cenários de usuário
+
+- [Gerenciamento de Identidade e Acesso](https://en.wikipedia.org/wiki/Identity_and_access_management) (IAM) diagramas
+
+- [Controle de Acesso Baseado em Papéis](https://en.wikipedia.org/wiki/Role-based_access_control) (RBAC) diagramas com papéis por componente de aplicação
+
+- [Controle de Acesso Baseado em Atributos](https://en.wikipedia.org/wiki/Attribute-based_access_control) (ABAC) diagramas com atributos por componente de aplicação
+
+- Diagramas de privacidade
+
+Diagramas relacionados:
+
+- Um diagrama de casos de uso mostra casos de uso à gerência/aos clientes, o que precede os requisitos, que precedem a arquitetura de software.
+
+- Um diagrama de implantação mostra o hardware/os computadores físicos nos quais os componentes de software são implantados.
+- Um diagrama de fluxo de dados mostra como os dados se movem pelo sistema e são transformados.
+- Um diagrama de sequência é usado para mostrar como protocolos como HTTP funcionam em um eixo de tempo.
+
+- Um diagrama de atividades retrata o fluxo de trabalho das atividades que um sistema de software executa, como uma IA de NPC.
 
 ## Funções de aptidão para decisões como código
 
-Funções de aptidão são verificações automatizadas objetivas, escritas com código de programação, que verificam se as decisões estão sendo mantidas.
+Funções de aptidão (fitness functions) são verificações automatizadas e objetivas, escritas com código de programação, que verificam se as decisões estão sendo mantidas.
 
-- Funções de aptidão tornam as decisões testáveis e asseguráveis.
+- As funções de aptidão tornam as decisões testáveis e asseguráveis.
 
-- Funções de aptidão para decisões podem ajudar muito a garantia de qualidade, processos regulatórios e objetivos de governança.
+- As funções de aptidão para decisões podem ajudar muito a garantia de qualidade, os processos regulatórios e os objetivos de governança.
 
-### Como funções de aptidão se conectam às decisões
+### Como as funções de aptidão se conectam às decisões
 
-Um registro de decisão documenta a decisão, enquanto uma função de aptidão assegura a decisão.
+Um registro de decisão documenta a decisão, enquanto uma função de aptidão a assegura.
 
 - Exemplo de decisão: usamos event sourcing para requisitos de auditoria.
 
-- Exemplo de função de aptidão: usamos o servidor de integração contínua para testar que todas as mudanças de estado devem produzir eventos.
+- Exemplo de função de aptidão: usamos o servidor de integração contínua para testar que toda mudança de estado deve produzir eventos.
 
-### Por que funções de aptidão ajudam decisões
+### Por que as funções de aptidão ajudam as decisões
 
-Medições objetivas: funções de aptidão passam ou falham, portanto o trabalho é visível e claro.
+Medições objetivas: as funções de aptidão passam ou falham, então o trabalho fica visível e claro.
 
-Uso contínuo: funções de aptidão são suas regras vivas, executadas em cada commit e build.
+Uso contínuo: as funções de aptidão são suas regras vivas, executadas a cada commit e build.
 
-Confiança para refatorar: funções de aptidão capturam automaticamente erros em regras de decisão.
+Confiança para refatorar: as funções de aptidão detectam automaticamente erros nas regras de decisão.
 
-Governança escalável: funções de aptidão asseguram padrões sem criar gargalos.
+Governança escalável: as funções de aptidão asseguram padrões sem criar gargalos.
 
-### Funções de aptidão podem usar IA?
+### As funções de aptidão podem usar IA?
 
-Funções de aptidão podem aproveitar LLMs de IA para decisões fazendo perguntas sobre seu trabalho,
-como seus planos, código, schemas, APIs e mais:
+As funções de aptidão podem aproveitar LLMs de IA para decisões, fazendo perguntas sobre o seu trabalho,
+como seus planos, código, esquemas, APIs e mais:
 
 ```txt
 IMPORTANT: Prefer retrieval-led reasoning over pre-training-led reasoning.
@@ -362,19 +402,30 @@ using all our decisions, and is correct and accurate.
 Explain any errors, problems, gaps, weaknesses. Be direct. Be decisive.
 ```
 
-### Testes unitários de arquitetura
+### Teste unitário de arquitetura
 
-[ArchUnit](https://www.archunit.org/): verifica regras de arquitetura de código Java usando qualquer framework simples de testes unitários em Java.
+[ArchUnit](https://www.archunit.org/): verifique regras de arquitetura de código Java usando qualquer framework de teste unitário Java comum.
 
-[ArchUnitTS](https://github.com/LukasNiessen/ArchUnitTS): verifica regras de arquitetura de código TypeScript e código JavaScript usando Jest, Vitest, Jasmine etc.
+[ArchUnitTS](https://github.com/LukasNiessen/ArchUnitTS): verifique regras de arquitetura de código TypeScript e JavaScript usando Jest, Vitest, Jasmine etc.
 
-## Proteções de decisões em pull requests
+## Proteções de decisão para pull requests
 
-O [Decision Guardian](https://github.com/DecispherHQ/decision-guardian) apresenta automaticamente as decisões relacionadas aos arquivos alterados durante a revisão de código, trazendo o contexto arquitetural ao pull request.
+O [Decision Guardian](https://github.com/DecispherHQ/decision-guardian)
+mostra automaticamente os registros de decisão certos no momento certo, ou seja, quando um
+desenvolvedor está modificando o código que essas decisões cobrem. Em vez de esperar que os desenvolvedores
+leiam uma pasta de documentos antes de mesclar, o contexto relevante aparece diretamente no pull request.
 
-O [ADR Guard](https://github.com/chohan-sarmad-ali/delivery-gates) é uma GitHub Action que exige um ADR quando caminhos monitorados são alterados; exceções precisam ser justificadas, por exemplo, utilizando `ADR-Exempt:`. Ambos oferecem mecanismos de governança integrados ao processo de desenvolvimento.
+Isso funciona para qualquer tipo de registro de decisão: decisões de arquitetura, de dados, de conformidade, clínicas e médicas, de segurança e mais.
 
-## Para saber mais
+Funciona com qualquer sistema de CI (GitLab, Jenkins, CircleCI) e como hook de pre-commit.
+Código aberto. Licença MIT.
+
+O [ADR Guard](https://github.com/chohan-sarmad-ali/delivery-gates) é uma GitHub
+Action que reprova um pull request quando caminhos de código monitorados mudam sem que um
+registro de decisão de arquitetura seja adicionado ou atualizado. As isenções são explícitas: uma linha
+`ADR-Exempt:` com um motivo passa pelo portão e é escrita no resumo do job. Independe de modelo, sem dependências. Código aberto. Licença MIT.
+
+## Para mais informações
 
 Introdução:
 
@@ -410,7 +461,7 @@ Aprofundamento:
 
 - [Architectural Retrospectives: the Key to Getting Better at Architecting](https://www.infoq.com/articles/architectural-retrospectives/)
 
-- [Software Architecture Monday with Mark Richards](https://developertoarchitect.com/lessons/) - free monthly software architecture lesson
+- [Software Architecture Monday with Mark Richards](https://developertoarchitect.com/lessons/) - aula mensal gratuita de arquitetura de software
 
 - [Solution Architecture Decisions - By Gareth Morgan](https://www.linkedin.com/pulse/solution-architecture-decisions-gareth-morgan-0r5xe/)
 
@@ -490,5 +541,4 @@ Veja também:
 
 - IBM’s e-Business Reference Architecture Framework
 
-- [Decision Reasoning Format (DRF)](https://github.com/reasoning-formats/reasoning-formats) - A vendor-neutral, machine-readable YAML/JSON format for representing decisions with explicit reasoning, assumptions, cognitive state, and trade-offs. Complements ADRs by adding structured, validatable reasoning to decision documentation.
-
+- [Decision Reasoning Format (DRF)](https://github.com/reasoning-formats/reasoning-formats) - Um formato YAML/JSON neutro quanto a fornecedores e legível por máquina para representar decisões com raciocínio explícito, premissas, estado cognitivo e trade-offs. Complementa os ADRs ao adicionar raciocínio estruturado e validável à documentação de decisões.

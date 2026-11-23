@@ -3,8 +3,9 @@
 Rules: [spec/locales.md](../spec/locales.md). Translate serially, one locale at
 a time; do not use parallel subagents.
 
-1. Pick the next code from `locales/locales-by-priority.md`. Source is
-   `locales/en-001`.
+1. Choose a locale code not already present in `locales/index.md` or the
+   `locales/` directories, following [spec/locales.md](../spec/locales.md).
+   The source of truth is `locales/en-001`.
 2. Build the slug map (section, English slug, localized directory) for the
    3 sections, 12 documents, 11 templates (+ 40 examples). Keep product names
    in Latin script.

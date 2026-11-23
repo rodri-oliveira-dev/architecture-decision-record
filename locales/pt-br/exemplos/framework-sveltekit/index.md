@@ -2,34 +2,34 @@
 
 * Data: [Data atual]
 
-* Status: [proposto, aprovado, rejeitado, obsoleto]
+* Estado: [proposed, approved, rejected, deprecated]
 
 ## Contexto
 
-Estamos construindo uma nova aplicação web que exige uma arquitetura front-end escalável e eficiente. Depois de conduzir uma análise completa de vários frameworks front-end, escolhemos SvelteKit como nosso framework preferido.
+Estamos construindo uma nova aplicação web que exige uma arquitetura de front-end escalável e eficiente. Após uma análise minuciosa de vários frameworks de front-end, escolhemos o SvelteKit como nosso framework preferido. 
 
 ## Decisão
 
-Decidimos implementar a arquitetura front-end SvelteKit para nossa aplicação web. SvelteKit fornece um sistema avançado de desenvolvimento front-end que é rápido, eficiente e flexível. Ele pode ser usado para otimizar aplicações grandes e pequenas.
+Decidimos implementar a arquitetura de front-end SvelteKit para a nossa aplicação web. O SvelteKit fornece um sistema avançado de desenvolvimento de front-end que é rápido, eficiente e flexível. Pode ser usado para otimizar aplicações grandes e pequenas.
 
 ## Justificativa
 
-SvelteKit é uma solução front-end nova e abrangente que oferece um conjunto de recursos como renderização server-side, hot reloading, configuração simplificada e muitos outros. Ele nos permite criar arquitetura front-end de alta qualidade que consegue lidar com as maiores aplicações com facilidade.
+O SvelteKit é uma solução de front-end nova e abrangente que oferece uma série de recursos, como renderização no servidor, recarga a quente (hot reloading), configuração simplificada e muito mais. Ele nos permite criar uma arquitetura de front-end de alta qualidade capaz de lidar com facilidade com as maiores aplicações.
 
-A arquitetura baseada em componentes do SvelteKit nos permite desenvolver componentes de UI reutilizáveis e escaláveis que podem ser integrados sem atrito entre diferentes projetos. O framework oferece excelente suporte a TypeScript, permitindo criar código limpo e estruturado que é fácil de manter.
+A arquitetura baseada em componentes do SvelteKit nos permite desenvolver componentes de UI reutilizáveis e escaláveis que podem ser integrados perfeitamente entre diferentes projetos. O framework oferece excelente suporte ao TypeScript, permitindo-nos criar código limpo e estruturado, fácil de manter.
 
-Além disso, SvelteKit fornece um sistema de gerenciamento de documentos fácil de usar que nos permite rastrear todas as decisões e mudanças de arquitetura do nosso projeto.
+Além disso, o SvelteKit fornece um sistema de gerenciamento de documentos fácil de usar que nos permite acompanhar todas as decisões arquiteturais e mudanças do nosso projeto.
 
 ## Alternativas consideradas
 
-Avaliamos várias alternativas, como React, Vue, Angular e Next.js, mas, com seus recursos, facilidade de uso e robustez, SvelteKit foi a escolha clara para nosso projeto.
+Avaliamos várias alternativas, como React, Vue, Angular e Next.js, mas, com seus recursos, facilidade de uso e robustez, o SvelteKit foi a escolha clara para o nosso projeto.
 
 ## Consequências
 
-Implementar a arquitetura front-end SvelteKit fornecerá melhor experiência de usuário, performance e flexibilidade. Podemos alcançar melhor produtividade por meio das configurações mais simples do framework, da arquitetura baseada em componentes e da modularidade. Como resultado, nosso projeto pode ser mais eficiente e estável.
+Implementar a arquitetura de front-end SvelteKit proporcionará melhor experiência do usuário, desempenho e flexibilidade. Podemos alcançar melhor produtividade graças às configurações mais simples do framework, à arquitetura baseada em componentes e à modularidade. Como resultado, nosso projeto pode ser mais eficiente e estável.
 
 ## Conclusão
 
-Decidimos implementar a arquitetura front-end SvelteKit para alcançar uma aplicação web moderna, escalável e eficiente com os recursos e a modularidade de que precisamos. Com seu excelente suporte a TypeScript, renderização server-side e simplificação de configurações, sentimos que SvelteKit é a melhor escolha para nosso projeto.
+Decidimos implementar a arquitetura de front-end SvelteKit para obter uma aplicação web moderna, escalável e eficiente, com os recursos e a modularidade de que precisamos. Com seu excelente suporte ao TypeScript, a renderização no servidor e a simplificação das configurações, sentimos que o SvelteKit é a melhor escolha para o nosso projeto.
 
-<h6>Crédito: esta página é gerada pelo ChatGPT e depois editada para clareza e formato.</h6>
+<h6>Crédito: esta página foi gerada pelo ChatGPT e depois editada quanto à clareza e ao formato.</h6>

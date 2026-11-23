@@ -12,6 +12,11 @@ const cases = [
 	[['en-GB'], '/en-gb/'],
 	[['hi-IN'], '/hi-in/'],
 	[['tr-TR'], '/tr-tr/'],
+	[['cy-AR'], '/cy-ar/'],
+	[['hi-NP'], '/hi-np/'],
+	[['ja-JP'], '/ja-jp/'],
+	[['ko-KR'], '/ko-kr/'],
+	[['zh-TH'], '/zh-th/'],
 	[['pt-BR'], '/pt-br/'],
 	[['pt-PT'], '/pt-pt/'],
 	[['zh-TW'], '/zh-tw/'],
@@ -78,7 +83,7 @@ const cases = [
 	[['es-419'], '/es-001/'],
 	[['tr-CY'], '/tr-001/'],
 	// first usable preference wins; unmatched ones are skipped
-	[['xx', 'fr-CA'], '/fr-001/'],
+	[['xx', 'fr-CA'], '/fr-ca/'],
 	[['am', 'am-ET', 'ja'], '/ja-001/'],
 	// nothing matches: English
 	[['am-ET'], '/en-001/'],

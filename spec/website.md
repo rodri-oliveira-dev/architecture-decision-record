@@ -33,8 +33,9 @@ each preference, most preferred first, the first rule that matches wins:
 2. Chinese by script or region: `zh-Hant`, `zh-HK`, `zh-MO` go to `/zh-tw/`,
    `zh-Hans` to `/zh-cn/`;
 3. the language's international `*-001` locale: `en-AU` goes to `/en-001/`,
-   `de-DE`, `fr-CA`, `pt-BR`, `fi` go to `/de-001/`, `/fr-001/`, `/pt-001/`,
-   `/fi-001/`.
+   `de-CH`, `fr-CH`, `pt-AO`, `fi` go to `/de-001/`, `/fr-001/`, `/pt-001/`,
+   `/fi-001/`. Exact regional matches such as `pt-BR` and `fr-CA` use
+   `/pt-br/` and `/fr-ca/` (rule 1).
 
 A preference that matches nothing is skipped, and with no match at all the
 visitor goes to `/en-001/`. Without JavaScript (and for crawlers) `/` stays a

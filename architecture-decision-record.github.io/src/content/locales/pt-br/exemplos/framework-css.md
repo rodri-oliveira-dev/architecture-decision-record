@@ -1,11 +1,11 @@
-# Registro de Decisão de Arquitetura: framework CSS
+# Registro de decisão de arquitetura: framework CSS
 
-Conteúdo:
+Sumário:
 
 - [Resumo](#resumo)
   - [Questão](#questão)
   - [Decisão](#decisão)
-  - [Status](#status)
+  - [Estado](#estado)
 - [Detalhes](#detalhes)
   - [Premissas](#premissas)
   - [Restrições](#restrições)
@@ -31,17 +31,17 @@ Queremos usar um framework CSS para criar nossas aplicações web:
 
   * Queremos iteração rápida em design, layout, UI/UX etc.
 
-  * Queremos aplicações responsivas, especialmente para telas menores, como em dispositivos móveis, telas maiores, como widescreens 4K, e telas dinâmicas, como displays rotativos.
+  * Queremos aplicações responsivas, especialmente para telas menores, como em dispositivos móveis, telas maiores, como widescreens 4K, e telas dinâmicas, como monitores rotacionáveis.  
 
 
 ### Decisão
 
-Decidido por Bulma.
+Decidido pelo Bulma.
 
 
-### Status
+### Estado
 
-Decidido por Bulma. Aberto a novas escolhas de framework CSS conforme surgirem.
+Decidido pelo Bulma. Abertos a novas escolhas de frameworks CSS à medida que surgirem.
 
 
 ## Detalhes
@@ -51,29 +51,29 @@ Decidido por Bulma. Aberto a novas escolhas de framework CSS conforme surgirem.
 
 Queremos criar apps web modernos, rápidos, confiáveis, responsivos etc.
 
-Apps web modernos típicos estão reduzindo/eliminando o uso de jQuery por múltiplos motivos:
+Os apps web modernos típicos estão reduzindo/eliminando o uso do jQuery por vários motivos: 
 
-  * JavaScript moderno está introduzindo muitas capacidades que jQuery forneceu, então jQuery é menos necessário, e há módulos melhores/mais rápidos/menores que fornecem implementações específicas
+  * O JavaScript moderno está incorporando gradualmente muitas capacidades que o jQuery oferecia, então o jQuery é menos necessário, e há módulos melhores/mais rápidos/menores que fornecem implementações específicas
 
-  * A abordagem ampla do jQuery é fazer manipulação direta do DOM, o que é um antipadrão para frameworks JavaScript modernos (por exemplo, React, Vue, Svelte)
+  * A abordagem ampla do jQuery é manipular o DOM diretamente, o que é um antipadrão para frameworks JavaScript modernos (p. ex., React, Vue, Svelte)
 
-  * jQuery interfere consigo mesmo se for carregado duas vezes etc.
+  * O jQuery interfere em si mesmo se for carregado duas vezes, etc.
 
 
 ### Restrições
 
-Se escolhermos um framework CSS que usa jQuery, então ficamos presos a importar jQuery. Por exemplo, Semantic UI usa jQuery, e Tachyons não.
+Se escolhermos um framework CSS que usa jQuery, ficaremos presos a importar o jQuery. Por exemplo, o Semantic UI usa jQuery, e o Tachyons não.
 
-Se escolhermos um framework CSS mínimo, então abrimos mão de componentes de framework que podemos querer agora ou em breve. Por exemplo, Semantic UI fornece um carrossel de imagens, e Tachyons não.
+Se escolhermos um framework CSS mínimo, abrimos mão de componentes do framework que podemos querer agora ou em breve. Por exemplo, o Semantic UI fornece um carrossel de imagens, e o Tachyons não.
 
 
 ### Posições
 
-Consideramos não usar framework. Isso ainda parece viável, especialmente porque CSS grid fornece muito do que precisamos para nosso projeto..
+Consideramos não usar framework. Isso ainda parece viável, especialmente porque o CSS grid fornece grande parte do que precisamos para o nosso projeto.
 
-Consideramos muitos frameworks CSS usando uma triagem rápida de shortlist: Bootstrap, Bulma, Foundation, Materialize, Semantic UI, Tachyons etc. Nossas duas seleções para revisão mais profunda são Semantic UI (porque tem a abordagem mais semântica) e Bulma (porque tem a abordagem mais leve que fornece os componentes que queremos agora).
+Consideramos muitos frameworks CSS por meio de uma triagem rápida em lista curta: Bootstrap, Bulma, Foundation, Materialize, Semantic UI, Tachyons etc. Nossas duas seleções para uma revisão mais profunda são o Semantic UI (porque tem a abordagem mais semântica) e o Bulma (porque tem a abordagem mais leve que fornece os componentes que queremos agora).
 
-Consideramos Semantic UI. Ele fornece muitos componentes, incluindo os que queremos para nosso projeto: abas, grids, botões etc. Fizemos um piloto com Semantic UI de duas formas: usando arquivos CDN típicos e usando repositórios NPM. Obtivemos sucesso com Semantic UI em uma página HTML estática, mas não obtivemos sucesso dentro do nosso timebox para construir uma SPA JavaScript (principalmente por causa de problemas de carregamento do jQuery). Descobrimos que outros coders vêm pedindo aos desenvolvedores do Semantic UI para criar uma versão sem jQuery, pelos mesmos motivos que temos. Outros coders vêm solicitando uma versão sem jQuery há muitos anos, mas os desenvolvedores disseram não e afirmaram que qualquer versão sem jQuery seria difícil demais de escrever, por exemplo, ~"the Semantic UI project has more than 22,000 touchpoints that use jQuery".
+Consideramos o Semantic UI. Ele fornece muitos componentes, incluindo os que queremos para o nosso projeto: abas, grades, botões etc. Fizemos um piloto com o Semantic UI de duas maneiras: usando arquivos CDN típicos e usando repositórios NPM. Tivemos sucesso com o Semantic UI em uma página HTML estática, mas não obtivemos sucesso dentro do nosso prazo para construir uma SPA em JavaScript (principalmente por problemas de carregamento do jQuery). Descobrimos que outros programadores vêm pedindo aos desenvolvedores do Semantic UI que criem uma versão sem jQuery, pelos mesmos motivos que nós. Outros programadores vêm pedindo uma versão sem jQuery há muitos anos, mas os desenvolvedores disseram não e declararam que qualquer versão sem jQuery seria difícil demais de escrever, p. ex. ~"o projeto Semantic UI tem mais de 22.000 pontos de contato que usam jQuery".
 
 Exemplo com Semantic:
 
@@ -84,7 +84,7 @@ Exemplo com Semantic:
 </div>
 ```
 
-Consideramos Bulma. Bulma tem muitas capacidades semelhantes às do Semantic UI, embora não tantos componentes sofisticados. Bulma é construído com técnicas modernas, como ausência de jQuery. Bulma tem alguns componentes de terceiros, alguns dos quais talvez queiramos usar.
+Consideramos o Bulma. O Bulma tem muitas capacidades semelhantes às do Semantic UI, embora não tantos componentes sofisticados. O Bulma é construído com técnicas modernas, como a ausência de jQuery. O Bulma tem alguns componentes de terceiros, dos quais podemos querer usar alguns.
 
 
 Exemplo com Bulma:
@@ -102,7 +102,7 @@ Exemplo com Bulma:
 
 Como acima.
 
-Especificamente, Semantic UI parece ter um sinal de cautela tanto em termos de tecnologia (ou seja, tantos pontos de contato com jQuery) quanto em termos de liderança (ou seja, sem jQuery foi um não firme, em vez de tentar um roadmap, ou melhoria contínua, ou captação de doações etc.).
+Especificamente, o Semantic UI parece ter uma bandeira de cautela tanto em termos de tecnologia (ou seja, tantos pontos de contato com o jQuery) quanto em termos de liderança (ou seja, ficar sem jQuery foi um não categórico, em vez de tentar um roteiro, ou melhoria contínua, ou arrecadação de doações etc.).
 
 
 ### Implicações
@@ -120,9 +120,9 @@ O framework CSS que escolhermos pode afetar a testabilidade.
 
 ### Requisitos relacionados
 
-Queremos entregar rapidamente um app puramente moderno.
+Queremos lançar rapidamente um app puramente moderno. 
 
-Não queremos gastar tempo trabalhando em frameworks mais antigos (especialmente Semantic UI) usando dependências mais antigas (especialmente jQuery).
+Não queremos gastar tempo trabalhando em frameworks mais antigos (esp. Semantic UI) que usam dependências mais antigas (esp. jQuery).
 
 
 ### Artefatos relacionados
