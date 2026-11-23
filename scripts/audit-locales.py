@@ -161,13 +161,13 @@ def check_catalog(name, entries):
         catalog_problems.append(f'{name}: missing={missing}, extra={extra}, duplicates={duplicates}')
 def read_text(path):
     with open(path, encoding='utf8') as f: return f.read()
-index_codes=re.findall(r'^\\* \\[[^\\]]+\\]\\(([a-z]{2,3}-[a-z0-9]{2,3})/\\)$',read_text('index.md'),re.M)
+index_codes=re.findall(r'^\* \[[^\]]+\]\(([a-z]{2,3}-[a-z0-9]{2,3})/\)$',read_text('index.md'),re.M)
 check_catalog('locales/index.md',index_codes)
 spec=read_text('../spec/locales.md')
-spec_codes=re.findall(r'^\\| \\x60([a-z]{2,3}-[a-z0-9]{2,3})\\x60 \\|',spec,re.M)
+spec_codes=re.findall(r'^\| `([a-z]{2,3}-[a-z0-9]{2,3})` \|',spec,re.M)
 check_catalog('spec/locales.md',spec_codes)
 picker=read_text('../architecture-decision-record.github.io/src/lib/locales.js')
-match=re.search(r'export const LOCALES = \\[(.*?)\\];',picker,re.S)
+match=re.search(r'export const LOCALES = \[(.*?)\];',picker,re.S)
 if not match:
     catalog_problems.append('language picker: LOCALES array not found')
 else:
@@ -178,9 +178,9 @@ count=len(catalog_codes)
 required_counts={
     'spec/README.md': ('../spec/README.md', f'40 examples, {count} locales'),
     'AGENTS.md': ('../AGENTS.md', f'translated into {count} locales'),
-    'spec/repository.md': ('../spec/repository.md', f'| Locales (hyphenated dirs, incl. \\x60en-001\\x60) | {count} |'),
+    'spec/repository.md': ('../spec/repository.md', f'| Locales (hyphenated dirs, incl. `en-001`) | {count} |'),
     'spec/locales.md heading': ('../spec/locales.md', f'## The {count} locales'),
-    'spec/locales.md summary': ('../spec/locales.md', f'Counts: {count} locales, of which \\x60en-001\\x60 is the source and {count-1} are translations or'),
+    'spec/locales.md summary': ('../spec/locales.md', f'Counts: {count} locales, of which `en-001` is the source and {count-1} are translations or'),
 }
 for name,(path,needle) in required_counts.items():
     if needle not in read_text(path):
