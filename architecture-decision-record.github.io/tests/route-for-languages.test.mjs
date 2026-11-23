@@ -12,6 +12,13 @@ const cases = [
 	[['en-GB'], '/en-gb/'],
 	[['hi-IN'], '/hi-in/'],
 	[['tr-TR'], '/tr-tr/'],
+	[['cy-AR'], '/cy-ar/'],
+	[['hi-NP'], '/hi-np/'],
+	[['ja-JP'], '/ja-jp/'],
+	[['ko-KR'], '/ko-kr/'],
+	[['zh-TH'], '/zh-th/'],
+	[['pt-BR'], '/pt-br/'],
+	[['pt-PT'], '/pt-pt/'],
 	[['zh-TW'], '/zh-tw/'],
 	[['zh-CN'], '/zh-cn/'],
 	// Chinese by script or region
@@ -71,7 +78,7 @@ const cases = [
 	[['lv-LV'], '/lv-lv/'],
 	[['sl'], '/sl-001/'],
 	[['sl-SI'], '/sl-si/'],
-	[['pt-BR'], '/pt-br/'],
+	[['pt-AO'], '/pt-001/'],
 	[['fi'], '/fi-001/'],
 	[['es-419'], '/es-001/'],
 	[['tr-CY'], '/tr-001/'],
@@ -96,6 +103,7 @@ test('every route the router can return is a real locale route', () => {
 test('picker values map to unique, hyphenated slugs', () => {
 	assert.equal(localeToSlug('en'), 'en-001');
 	assert.equal(localeToSlug('cy_GB'), 'cy-gb');
+	assert.equal(localeToSlug('pt_BR'), 'pt-br');
 	assert.equal(new Set(LOCALES.map(localeToSlug)).size, LOCALES.length);
 	for (const slug of LOCALE_SLUGS) assert.match(slug, /^[a-z]{2,3}-[a-z0-9]{2,3}$/);
 });

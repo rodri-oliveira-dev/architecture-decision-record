@@ -6,8 +6,9 @@ Every directory under `locales/` is named lowercase `<language>-<region>`
 (e.g. `en-001`, `cy-gb`, `zh-tw`, `pcm-001`; the language code is two or three
 letters, ISO 639). Two-letter, region-less directories such as
 `locales/en/` do not exist and must not be created. `-001` means "world" (UN
-M.49), used for a language-wide translation. Regional variants exist for Welsh
-(`cy-gb`), English (`en-gb`, `en-us`) and Chinese (`zh-cn`, `zh-tw`).
+M.49), used for a language-wide translation. Regional variants exist alongside world locales (for example, Welsh `cy-ar`
+and `cy-gb`, Portuguese `pt-br` and `pt-pt`, and Chinese `zh-cn`, `zh-th`,
+and `zh-tw`).
 
 `en-001` is the English source of truth: edit English there, then translate.
 Links to English content use `locales/en-001/`.
@@ -20,7 +21,7 @@ website has no separate `/en/` site: English is the `/en-001/` locale route
 `locales/`; stray or duplicate directories (for example a copy of a locale
 under another name) fail the audit and the sync, and are deleted.
 
-## The 125 locales
+## The 128 locales
 
 | Directory and route | Picker value | Endonym (Intl) |
 |---|---|---|
@@ -36,6 +37,7 @@ under another name) fail the audit and the sync, and are deleted.
 | `cs-001` | `cs_001` | čeština (svět) |
 | `cs-cz` | `cs_CZ` | čeština (Česko) |
 | `cy-001` | `cy_001` | Cymraeg (Y Byd) |
+| `cy-ar` | `cy_AR` | Cymraeg (Yr Ariannin) |
 | `cy-gb` | `cy_GB` | Cymraeg (Y Deyrnas Unedig) |
 | `da-001` | `da_001` | dansk (Verden) |
 | `da-dk` | `da_DK` | dansk (Danmark) |
@@ -73,6 +75,7 @@ under another name) fail the audit and the sync, and are deleted.
 | `he-001` | `he_001` | עברית (העולם) |
 | `hi-001` | `hi_001` | हिन्दी (विश्व) |
 | `hi-in` | `hi_IN` | हिन्दी (भारत) |
+| `hi-np` | `hi_NP` | हिन्दी (नेपाल) |
 | `hr-001` | `hr_001` | hrvatski (Svijet) |
 | `hr-hr` | `hr_HR` | hrvatski (Hrvatska) |
 | `hu-001` | `hu_001` | magyar (Világ) |
@@ -85,11 +88,13 @@ under another name) fail the audit and the sync, and are deleted.
 | `it-001` | `it_001` | italiano (Mondo) |
 | `it-it` | `it_IT` | italiano (Italia) |
 | `ja-001` | `ja_001` | 日本語 (世界) |
+| `ja-jp` | `ja_JP` | 日本語 (日本) |
 | `jv-001` | `jv_001` | Basa Jawa (Donya) |
 | `km-kh` | `km_KH` | ខ្មែរ (កម្ពុជា) |
 | `km-001` | `km_001` | ខ្មែរ (ពិភពលោក) |
 | `kn-001` | `kn_001` | ಕನ್ನಡ (ಪ್ರಪಂಚ) |
 | `ko-001` | `ko_001` | 한국어(세계) |
+| `ko-kr` | `ko_KR` | 한국어 (대한민국) |
 | `kw-001` | `kw_001` | kernewek (Bys) |
 | `kw-gb` | `kw_GB` | kernewek (Rywvaneth Unys) |
 | `lb-001` | `lb_001` | Lëtzebuergesch (Welt) |
@@ -146,15 +151,17 @@ under another name) fail the audit and the sync, and are deleted.
 | `yue-001` | `yue_001` | 粵語（世界） |
 | `zh-001` | `zh_001` | 中文（世界） |
 | `zh-cn` | `zh_CN` | 中文（中国） |
+| `zh-th` | `zh_TH` | 中文（泰国） |
 | `zh-tw` | `zh_TW` | 中文（台灣） |
 
-Counts: 125 locales, of which `en-001` is the source and 124 are translations or
+Counts: 128 locales, of which `en-001` is the source and 127 are translations or
 variants (`en-gb` and `en-us` follow English; `cy-gb` is a copy of `cy-001`;
 `hi-in` is a copy of `hi-001`; `sv-se` is a copy of `sv-001`; `tr-tr` is a copy of `tr-001`; `nl-nl`, `is-is`, `et-ee`, `id-id`, `fi-fi`, `it-it`, `th-th` and `vi-vn` are copies of their `-001` locales; `da-dk`, `de-de`, `de-at`, `es-es`, `fr-fr`, `fr-lu`, `pt-pt` and `nl-be` are copies of `da-001`, `de-001`, `es-001`, `fr-001`, `pt-001` and `nl-001`; `en-ie` is a copy of `en-gb`; `pl-pl` is a copy of `pl-001`; `ro-ro` is a copy of `ro-001`; `sw-tz` is a copy of `sw-001`; `el-gr` is a copy of `el-001`; `el-cy` is a copy of `el-001`; `hu-hu` is a copy of `hu-001`; `cs-cz` is a copy of `cs-001`; `bg-bg` is a copy of `bg-001`; `hr-hr` is a copy of `hr-001`; `sk-sk` is a copy of `sk-001`; `lt-lt` is a copy of `lt-001`; `sl-si` is a copy of `sl-001`; `lv-lv` is a copy of `lv-001`; `ga-ie` is a copy of `ga-001`; `mt-mt` is a copy of `mt-001`; `fr-be` is a copy of `fr-001`; `lb-lu` is a copy of `lb-001`; `kw-gb` is a copy of `kw-001`; `sco-gb` is a copy of `sco-001`; `eu-es` is a copy of `eu-001`; `gd-gb` is a copy of `gd-001`; `km-kh` is a copy of `km-001`; `lo-la` is a copy of `lo-001`; `nb-no` is a copy of `nb-001`; `es-mx` is `es-001` with Mexican vocabulary (agregar, costos, hospedar, monitoreo, implementar, video, celular); `pt-br` is a copy of `pt-001`, which is already Brazilian Portuguese; `ar-eg`, `ru-ru` and `bn-bd` are copies of their `-001` locales; `ar-dz`, `fr-ca`, `bn-in`, `id-my` and `ru-by` are adapted from their `-001` locales with a vocabulary map, `ru-by` with no differences yet). Every one is complete: 205 files, 63 pages, and a root index.
 
 `locales/index.md` lists each locale as `* [<Endonym> (<World>)](<code>/)`.
-`locales/locales-by-priority.md` records the translation order (all are
-done).
+`locales/index.md` is the human-readable inventory of completed locales.
+Use it together with the directories under `locales/` to check coverage; there
+is no maintained translation-priority file.
 
 Turkish: `tr-001` (the world locale) and `tr-tr` (identical content, kept for
 the regional name, like `cy-gb`) are complete. Turkish headings use "Bağlantılı"
